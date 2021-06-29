@@ -2,7 +2,7 @@ import socket
 
     
 server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-server.bind(('127.0.0.1', 6743 ))
+server.bind(('192.168.0.50', 6743 ))
 server.listen()
 
 while True:
