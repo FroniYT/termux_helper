@@ -1,15 +1,19 @@
-import socket
+import socket   
 
-    
-server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-server.bind(('192.168.0.50', 6743 ))
-server.listen()
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+client.connect(('192.168.0.50', 6743))
 
 while True:
-    user, adres = server.accept()
 
-    while True:
-        data = user.recv(1024).decode('UTF-8').lower()
+    command = input('''
+    
+    
+''')
 
-        if data == 'hello':
-            print('hello')
+
+    if command == '/'[-1]:
+        client.send('ура'.encode('utf-8'))
+
+    client.send(command.encode('utf-8'))
