@@ -2,7 +2,7 @@ import socket
 
     
 server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-server.bind((socket.gethostbyname_ex(socket.gethostname())[-1][-1], 6743 ))
+server.bind(('127.0.0.1', 6743 ))
 server.listen()
 
 while True:
