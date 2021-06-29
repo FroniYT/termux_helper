@@ -3,7 +3,7 @@ import socket
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-client.connect(('127.0.0.1', 6743))
+client.connect(('192.168.0.50', 6743))
 
 while True:
 
