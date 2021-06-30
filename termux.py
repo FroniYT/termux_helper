@@ -1,12 +1,14 @@
 import socket
-#from tkinter import *
 
-#client.send(chat.encode('utf-8'))
+    
+server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.bind(('10.80.68.86', 4783))
+server.listen()
 
+while True:
+    user, adres = server.accept()
 
-#Connect
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    while True:
+        data = user.recv(1024).decode('UTF-8').lower()
 
-client.connect(('10.80.68.86', 4783))
-
-client.send(input().encode('utf-8'))
+        print(data)
